@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>shards</groupId>
+	<artifactId>shards</artifactId>
+	<version>0.1</version>
+	<packaging>jar</packaging>
+	<developers>
+		<developer>
+			<name>Marcin Świerczyński</name>
+			<email>marcin@swierczynski.net</email>
+		</developer>
+		<developer>
+			<name>Jacek Olszak</name>
+			<email>jacekolszak@gmail.com</email>
+		</developer>
+	</developers>
+	<organization>
+		<name>PJWSTK</name>
+	</organization>
+
+	<dependencies>
+		<!-- unit tests-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>8.4-701.jdbc4</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.5.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.8</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.12</version>
+		</dependency>
+		<!-- utilities -->
+		<dependency>
+			<groupId>com.google.collections</groupId>
+			<artifactId>google-collections</artifactId>
+			<version>1.0-rc5</version>
+		</dependency>
+		<!--  YAML parser -->
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>jsqlparser</groupId>
+			<artifactId>jsqlparser</artifactId>
+			<version>0.6.2a</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>snakeyaml</id>
+			<name>SnakeYAML repository</name>
+			<url>http://snakeyamlrepo.appspot.com/repository</url>
+		</repository>
+		<repository>
+			<id>google-maven-repository</id>
+			<name>Google Maven Repository</name>
+			<url>http://google-maven-repository.googlecode.com/svn/repository/
+			</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>

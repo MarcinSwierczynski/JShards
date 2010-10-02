@@ -1,0 +1,23 @@
+Mniej ważne:
+
+
+Daleka przyszłość:
+
+* uruchamianie zapytań równolegle na kilku shardach naraz (w wielu wątkach)
+* joiny z globalnymi tabelami :(
+ * obsługa aliasów dla tabel (wtedy będzie działać joiny gdzie pierwszą tabelą jest tabela shardowana)
+  * zmienic implementacje wyrazeń binarnych 
+   * gdy kolumna w WHERE dotyczy tabeli globalnej to nie może to wpływać na wynik wyrażenia np.
+     WHERE kolumna_klucz_sharda = X OR kolumna_tabeli_globalnej = Y
+ * obsługa join w parserze
+* obsługa aliasów dla kolumn
+* inne zliczanie wierszy zaktualizowanych dla mirroringu i shardingu
+
+Bardzo daleka przyszłość:
+* poprawa gramatyki
+ * obsługa booleanów (true i false w wyrażeniach)
+* dodanie obsługi strumieni, readerów i innych takich w ShardsPreparedStatement
+
+Tekst pracy:
+* nieefektywne sortowanie z limitem
+* opisac sposoby optymalizacji - np. równoległe wykonywanie zapytań na shardach

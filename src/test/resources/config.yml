@@ -1,0 +1,30 @@
+---
+drivers:
+  - "org.postgresql.Driver"
+
+connections:
+  - 
+    name: shard1
+    url: "jdbc:postgresql://dev:5432/shards"
+    user: shards
+    password: shards
+  - 
+    name: shard2
+    url: "jdbc:postgresql://dev:5432/shards2"
+    user: shards
+    password: shards
+
+strategy:
+  - 
+    table: shards
+    class: "shards.RangeShardsSelectionStrategy"
+    params:
+      column: id
+      ranges:
+        - 
+          from: 0
+          to: 2
+          shard: shard1
+        - 
+          from: 3
+          shard: shard2

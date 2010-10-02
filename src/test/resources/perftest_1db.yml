@@ -1,0 +1,11 @@
+---
+drivers:
+  - "org.postgresql.Driver"
+
+connections:
+  - 
+    name: shard1
+    url: "jdbc:postgresql://10.100.0.132:5432/perftest-single"
+    user: postgres
+    password: postgres
+
